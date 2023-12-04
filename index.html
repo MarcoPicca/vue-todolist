@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-todolist</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+        <div class="container-title">
+          <h1>To do list</h1>
+        </div>
+        <div class="container-input">
+            <input type="text" name="userTask" id="userTask" v-model="newTask" @keyup.enter="addTask" placeholder="Aggiungi un nuovo Task">
+            <button class="btn-add" @click="addTask">Aggiungi</button>
+        </div>
+        <ul class="container-tasks">
+            <li v-for="(task, index) in tasks" class="task">
+                <span>{{ task.text }}</span>
+                <div class="btn-container">
+                    <button class="btn-complete">v</button>
+                    <button class="btn-remove" @click="removeTask">x</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
