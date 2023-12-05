@@ -49,8 +49,9 @@ input{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-span{
+span.erased{
     margin-left: .3rem;
+    text-decoration: line-through;
 }
 
 .btn-add{

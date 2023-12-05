@@ -20,10 +20,12 @@
         </div>
         <ul class="container-tasks">
             <li v-for="(task, index) in tasks" class="task">
-                <span>{{ task.text }}</span>
+                <span :class="(task.done) ? 'erased' : ''">
+                    {{ task.text }}
+                </span>
                 <div class="btn-container">
                     <button class="btn-complete">v</button>
-                    <button class="btn-remove" @click="removeTask">x</button>
+                    <button class="btn-remove" @click="removeTask(index)">x</button>
                 </div>
             </li>
         </ul>
